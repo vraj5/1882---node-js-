@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema(
             trim: true,
         },
         product_stock: {
-            type: Number,
+            type: number,
             trim: true,
         },
         is_active: {

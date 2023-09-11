@@ -7,6 +7,7 @@ const router = express.Router();
 /** Create Category */
 router.post(
     "/create-category",
+    categoryValidation.createCategory,
     categoryController.createCategory
 )
 

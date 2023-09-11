@@ -1,29 +1,13 @@
 const express = require("express")
-const bodyParser = require("body-parser")
-const Joi = require("joi")
-const cors = require("cors")
-const http = require("http")
-const {connectDB} = require("./db/dbConnection")
-const routes = require("./routes/v1")
-const config = require("./config/config")
-
+const port = 8080;
 const app = express();
 
+app.listen(port, console.log("Express Server is running Successfully..."))
 
-// Add Namespace in route
-app.use("/v1", routes);
 
-// When route not created and you try to use that route and throw error
-app.use((req,res,next)=>{
-    next(new Error("Route not Found!"));
-});
+// const http = require("http")
+// const port2 = 8888;
 
-// Database Connection
-connectDB()
+// http.createServer((req,res)=>{
 
-// Create Server using HTTP
-const server = http.createServer(app)
-
-server.listen(config.port, ()=>{
-    console.log("Server listning on port number 3000!");
-})
+// }).listen(port2, console.log("http server created successfully...."))
